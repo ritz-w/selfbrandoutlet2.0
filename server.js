@@ -4,10 +4,11 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const jwt = require('jsonwebtoken')
 const path = require("path")
+const port = process.env.PORT || 5000;
+
 require("dotenv").config()
 
-
-app.use(express.static(path.join(__dirname, "client", "build")))
+//middleware
 app.use(cors())
 app.use(bodyParser.json())
 app.use(function(req, res, next){
@@ -22,6 +23,8 @@ app.use(function(req, res, next){
             next()
         }
     })
+app.use(express.static('client/build'));
+
 
 //configure database
 const db = require('./config/db');
@@ -37,12 +40,11 @@ mongoose.connect(db.url)
 });
 
 require('./routes')(app);
-const port = process.env.PORT || 5000;
-app.get("*", (req, res) => {
-    // res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-    res.sendfile('./index.html');
 
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
+
 app.listen(port, () => {
     console.log(`we are live on port ${port}`)
 })
