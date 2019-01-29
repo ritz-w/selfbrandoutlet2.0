@@ -3,13 +3,17 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const jwt = require('jsonwebtoken')
+const path = require("path")
+require("dotenv").config()
+const secret = process.env.SECRET || "RESTFULAPIs"
 
 
+app.use(express.static(path.join(__dirname, "client", "build")))
 app.use(cors())
 app.use(bodyParser.json())
 app.use(function(req, res, next){
     if (req.headers && req.headers.authorization && req.headers.authorization.split(' ')[0] === 'JWT') {
-    jwt.verify(req.headers.authorization.split(' ')[1], 'RESTFULAPIs', (err, decode) => {
+    jwt.verify(req.headers.authorization.split(' ')[1], secret, (err, decode) => {
         if (err) req.user = undefined;
             req.user = decode;
             console.log(decode)
@@ -35,6 +39,9 @@ mongoose.connect(db.url)
 
 require('./routes')(app);
 const port = process.env.PORT || 5000;
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 app.listen(port, () => {
     console.log(`we are live on port ${port}`)
 })
