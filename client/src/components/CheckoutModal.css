@@ -1,0 +1,107 @@
+.checkout-modal-container {
+    width: 100%;
+}
+
+.checkout-header {
+    font-family: 'Major Mono Display', monospace;
+    width: 100%;
+    padding: 3%;
+
+}
+
+.checkout-items-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-bottom: 3px solid black;
+}
+
+.checkout-modal-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 4%;
+    text-align: center;
+    border-top: 2px dashed black;
+}
+
+.checkout-modal-outer {
+    padding-bottom: 1%;
+    border-top: 2px dashed violet;
+}
+
+.checkout-modal-item-image {
+    width: 30%;
+}
+.checkout-modal-item-text {
+    width: 30%;
+}
+.checkout-modal-item-summary {
+    width: 30%;
+}
+
+.checkout-modal-item img {
+    width: 100%;
+}
+
+.checkout-modal-subtotal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Thasadith', sans-serif;
+    padding: 5%;
+}
+
+.checkout-button-section {
+    width: 50%;
+    margin-top: 10%;
+}
+
+#checkout-button {
+    font-family: 'Major Mono Display', monospace;
+    padding: 3%;
+    text-align: center;
+}
+
+#checkout-button h1 {
+    margin: 0px;
+    font-size: 1.5em;
+}
+
+.checkout-offset { 
+    transition: 0.25s; 
+    box-shadow: 
+      0.3em 0.3em 0 0 black,
+      inset 0.3em 0.3em 0 0 black;
+}
+
+.checkout-offset:hover,
+.checkout-offset:focus {
+  box-shadow: 
+    0 0 0 0 violet,
+    inset 6em 3.5em 0 0 violet;
+    color: black;
+    border: 3px solid black;
+}
+
+#item-count-adjuster {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 50px;
+    border: 2px solid black;
+    margin: 0 auto;
+}
+
+#item-count-minus {
+    width: 50%;
+    background-color: black;
+    color: white;
+    line-height: 1.2em;
+}
+
+#item-count-plus {
+    width: 50%;
+    line-height: 1.2em;
+}
+

@@ -1,0 +1,84 @@
+.modal-item-container {
+    display: flex;
+    flex-direction: row;
+    margin: 5%;
+}
+
+.modal-item-container h2 {
+    font-family: 'Major Mono Display', monospace;
+}
+
+.modal-item-column {
+    width: 50%;
+}
+
+.modal-image-box {
+    width: 100%;
+}
+
+.modal-image-box img {
+    width: 80%;
+    padding: 5%;
+    margin-left: 5%;
+}
+
+.image-toggler-box {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    border: 1px solid black;
+    margin: 0 auto; 
+    justify-content: space-evenly;
+}
+
+.image-toggler {
+    width: 50%;
+}
+
+.image-toggler img {
+    width: 80%;
+    max-height: 100px;
+    object-fit: contain;
+    margin-left: 5%;
+    padding: 5%;
+}
+
+#add-cart-button {
+    font-family: 'Major Mono Display', monospace;
+    padding: 3%;
+    border: 1px solid black;
+    text-align: center;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 25%;
+}
+
+#add-cart-button h1 {
+    margin: 0px;
+    font-size: 1.5em;
+}
+
+.clicked-offset {
+    background: black;
+    color: white;
+}
+
+.offset { 
+    transition: 0.25s; 
+    box-shadow: 
+      0.3em 0.3em 0 0 black,
+      inset 0.3em 0.3em 0 0 black;
+}
+
+.offset:hover,
+.offset:focus {
+  box-shadow: 
+    0 0 0 0 black,
+    inset 6em 3.5em 0 0 black;
+    color: white;
+}
+
+.item-desc-text {
+    font-family: 'Muli', sans-serif;
+    padding: 5%;
+}

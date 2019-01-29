@@ -1,0 +1,108 @@
+.customOverlay {
+    display: block;
+}
+
+.customModal {
+    background-color: blue;
+}
+
+.payment-modal-box {
+    display: flex;
+    flex-direction: column;
+}
+
+#payment-form {
+    padding: 5% 15%;
+}
+
+.checkout-header {
+    width: 94%;
+}
+
+#thank-you {
+    width: 50%;
+    margin-left: 25%;
+}
+.checkout-header h3 {
+    font-family: 'Thasadith', sans-serif;
+}
+
+.checkout-header h4 {
+    font-family: 'Muli', sans-serif;
+    text-align: center;
+}
+
+
+.checkout-header p {
+    font-family: 'Muli', sans-serif;
+    text-align: center;
+}
+
+
+.checkout-header {
+    padding: 0% 3%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 5%;
+}
+
+.form-group input {
+    width: 100%;
+    border: 1px solid grey;
+    border-radius: 3px;
+    font-size: 15px;
+    padding: 10px;
+    margin-bottom: 2%;
+}
+
+.form-group label {
+    margin-bottom: 2%;
+}
+
+.card-details-section label {
+    margin-bottom: 2%;
+}
+
+.card-details-section div {
+    margin-top: 2%;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 3px;
+    margin-bottom: 10%;
+}
+
+.pay-button-section {
+    margin: 3% auto;
+    width: 50%;
+}
+#pay-button {
+    font-family: 'Major Mono Display', monospace;
+    padding: 3%;
+    text-align: center;
+}
+
+#pay-button h1 {
+    margin: 0px;
+    font-size: 1.5em;
+}
+
+.pay-offset { 
+    transition: 0.25s; 
+    box-shadow: 
+      0.3em 0.3em 0 0 black,
+      inset 0.3em 0.3em 0 0 black;
+}
+
+.pay-offset:hover,
+.pay-offset:focus {
+  box-shadow: 
+    0 0 0 0 black,
+    inset 6em 3.5em 0 0 black;
+    color: white;
+    border: 3px solid black;
+}

@@ -1,0 +1,59 @@
+.page-container {
+    width: 80%;
+    height: auto !important;
+    background-color: white;
+    margin-left: 10%;
+    min-height: 100%;
+}
+
+.footer {
+    width: 80%;
+    margin-left: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    text-align: center;
+    background-color: white;
+}
+
+.footer p {
+    font-family: 'Muli', sans-serif;
+    font-size: 0.8em;
+}
+
+.shown {
+    opacity: 1;
+}
+
+.hidden {
+    opacity: 0;
+}
+.alert {
+    padding: 2%;
+    font-family: 'Muli', sans-serif;
+    position: fixed;
+    z-index: 2;
+    border-radius: 3px;
+    color: black;
+    width: 30%;
+    margin-top: 3%;
+    text-align: center;
+    margin-left: 21%;
+    transition: opacity 0.5s linear;
+  }
+  
+  /* The close button */
+  .closebtn {
+    margin-left: 15px;
+    color: black;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .closebtn:hover {
+    color: black;
+  }

@@ -1,0 +1,48 @@
+.signin-modal-box {
+    top: calc(50% - 200px);
+    left: calc(50% - 200px);
+    width: 400px;
+    height: 400px;
+    background-color: white;
+}
+
+.signup-modal-box {
+    top: calc(50% - 250px);
+    left: calc(50% - 200px);
+    width: 400px;
+    height: 500px;
+    background-color: white;
+}
+
+.auth-form h3 {
+    font-family: 'Thasadith', sans-serif;
+}
+
+.auth-form p {
+    font-family: 'Muli', sans-serif;
+}
+
+.auth-form {
+    text-align: center;
+    margin-top: 10%;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.auth-form input{
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    width: 150px;
+}
+
+.auth-form button{
+    border: 1px solid black;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100px;
+    background-color: black;
+    color: white;
+}
