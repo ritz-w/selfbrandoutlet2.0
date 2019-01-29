@@ -24,8 +24,6 @@ app.use(function(req, res, next){
         }
     })
 
-// app.use(express.static(path.join(__dirname, 'client', 'build')));
-
 //configure database
 const db = require('./config/db');
 const mongoose = require('mongoose');
@@ -39,21 +37,34 @@ mongoose.connect(db.url)
     process.exit();
 });
 
+//use routes
 require('./routes')(app);
 
-// app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
-// });
+//serve static assets if in production
 
 if (process.env.NODE_ENV === 'production') {
-    // Exprees will serve up production assets
+    console.log('we are in production')
+    //set a static folder
     app.use(express.static('client/build'));
   
     // Express serve up index.html file if it doesn't recognize route
     app.get('*', (req, res) => {
-      res.sendFile(path.resolve('client', 'build', 'index.html'));
+      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
   }
+
+  //configure database
+const db = require('./config/db');
+const mongoose = require('mongoose');
+
+mongoose.Promise = global.Promise;
+mongoose.connect(db.url)
+.then(() => {
+    console.log("Successfully connected to MongoDB.");    
+}).catch(err => {
+    console.log('Could not connect to MongoDB.');
+    process.exit();
+});
 
 app.listen(port, () => {
     console.log(`we are live on port ${port}`)

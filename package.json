@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nodemon --watch app server.js",
     "start": "node server.js",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "dependencies": {
     "bcrypt": "^3.0.3",
