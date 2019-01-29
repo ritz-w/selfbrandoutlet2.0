@@ -5,7 +5,6 @@ const cors = require('cors');
 const jwt = require('jsonwebtoken')
 const path = require("path")
 require("dotenv").config()
-const secret = process.env.SECRET || "RESTFULAPIs"
 
 
 app.use(express.static(path.join(__dirname, "client", "build")))
@@ -13,7 +12,7 @@ app.use(cors())
 app.use(bodyParser.json())
 app.use(function(req, res, next){
     if (req.headers && req.headers.authorization && req.headers.authorization.split(' ')[0] === 'JWT') {
-    jwt.verify(req.headers.authorization.split(' ')[1], secret, (err, decode) => {
+    jwt.verify(req.headers.authorization.split(' ')[1], process.env.SECRET, (err, decode) => {
         if (err) req.user = undefined;
             req.user = decode;
             console.log(decode)
