@@ -26,10 +26,10 @@ app.use(function(req, res, next){
 
 //configure database
 const mongoDb = require('./config/db');
-const mongoose = require('mongoose');
+const mongooseLink = require('mongoose');
 
-mongoose.Promise = global.Promise;
-mongoose.connect(mongoDb.url)
+mongooseLink.Promise = global.Promise;
+mongooseLink.connect(mongoDb.url)
 .then(() => {
     console.log("Successfully connected to MongoDB.");    
 }).catch(err => {
