@@ -42,7 +42,7 @@ mongoose.connect(db.url)
 require('./routes')(app);
 
 app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
 app.listen(port, () => {
