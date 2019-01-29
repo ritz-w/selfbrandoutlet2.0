@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import './ItemModal.css'
+const API_URL = (process.env.NODE_ENV === 'development') ? 'http://localhost:3000' : 'https://self-brand-outlet.herokuapp.com/';
 
 export default class ItemModal extends Component {
   constructor(props) {
@@ -27,7 +28,7 @@ export default class ItemModal extends Component {
       }
       let cartData = JSON.parse(sessionStorage.getItem('cart'))
       console.log(cartData)
-      fetch(`http://localhost:5000/api/items/${this.props.item._id}/add-to-cart`, 
+      fetch(`${API_URL}/api/items/${this.props.item._id}/add-to-cart`, 
       {
         headers: {
           'authorization': `JWT ${sessionStorage.accessToken}`,

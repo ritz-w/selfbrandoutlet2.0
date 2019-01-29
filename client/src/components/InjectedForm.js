@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import {CardElement, injectStripe} from 'react-stripe-elements'
+const API_URL = (process.env.NODE_ENV === 'development') ? 'http://localhost:3000' : 'https://self-brand-outlet.herokuapp.com/';
+
 
 class InjectedForm extends Component {
     constructor(props){
@@ -23,7 +25,7 @@ class InjectedForm extends Component {
         this.props.stripe.createToken({name: this.state.name, address_line1: this.state.shippingAddress, address_city: this.state.city, address_country: this.state.country})
         .then(({token}) => {
             console.log(token)
-            fetch('http://localhost:5000/api/items/checkout', {
+            fetch(`${API_URL}/api/items/checkout`, {
                 headers: {
                 'authorization': `JWT ${sessionStorage.accessToken}`,
                 "Content-Type": "application/json"

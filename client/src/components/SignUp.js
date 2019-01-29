@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './SignIn.css'
+const API_URL = (process.env.NODE_ENV === 'development') ? 'http://localhost:3000' : 'https://self-brand-outlet.herokuapp.com/';
 
 export default class SignUp extends Component {
     constructor(props) {
@@ -24,7 +25,7 @@ export default class SignUp extends Component {
     handleSubmit = (e) => {
         this.handleClick()
         e.preventDefault()
-        fetch('http://localhost:5000/auth/register', 
+        fetch(`${API_URL}/auth/items`, 
         {
             headers: {
               'Content-Type': 'application/json'
@@ -37,7 +38,7 @@ export default class SignUp extends Component {
             console.log(data)
             if (data.email) {
                 console.log("successfully signed up, now logging in")
-                fetch('http://localhost:5000/auth/sign_in', 
+                fetch(`${API_URL}/auth/signin`, 
                 {
                     headers: {
                     'Content-Type': 'application/json'

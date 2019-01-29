@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import CheckoutModalItem from './CheckoutModalItem'
 import './CheckoutModal.css'
 import PaymentModalForm from './PaymentModalForm'
+const API_URL = (process.env.NODE_ENV === 'development') ? 'http://localhost:3000' : 'https://self-brand-outlet.herokuapp.com/';
 
 
 
@@ -29,7 +30,7 @@ class CheckoutModal extends Component{
 
     handleIncrementItem = (item, addOrMinus) => { 
         let cartData = JSON.parse(sessionStorage.getItem('cart'))
-        fetch(`http://localhost:5000/api/items/${item.item._id}/update-cart`, 
+        fetch(`${API_URL}/api/items/${item.item._id}/update-cart`, 
         {
           headers: {
             'authorization': `JWT ${sessionStorage.accessToken}`,

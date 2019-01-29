@@ -3,8 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 import {StripeProvider} from 'react-stripe-elements';
 import Page from './containers/Page'
-const API_URL = process.env.NODE_ENV === 'development' ? process.env.DEV_API : process.env.PROD_API
-require("dotenv").config()
+const API_URL = (process.env.NODE_ENV === 'development') 
+    ? 'http://localhost:3000'
+    : 'https://self-brand-outlet.herokuapp.com/';
 
 class App extends Component {
   constructor(props) {

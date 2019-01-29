@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import './SignIn.css'
+const API_URL = (process.env.NODE_ENV === 'development') ? 'http://localhost:3000' : 'https://self-brand-outlet.herokuapp.com/';
+
 
 export default class SignIn extends Component {
     constructor(props) {
@@ -28,7 +30,7 @@ export default class SignIn extends Component {
             email: this.state.email,
             password: this.state.password
         }
-        fetch('http://localhost:5000/auth/sign_in', 
+        fetch(`${API_URL}/auth/signin`, 
         {
             headers: {
               'Content-Type': 'application/json'
