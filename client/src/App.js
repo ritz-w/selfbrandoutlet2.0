@@ -3,6 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 import {StripeProvider} from 'react-stripe-elements';
 import Page from './containers/Page'
+const API_URL = process.env.NODE_ENV === 'development' ? process.env.DEV_API : process.env.PROD_API
+require("dotenv").config()
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -12,12 +15,12 @@ class App extends Component {
     }
   }
   componentDidMount(){
-    fetch('http://localhost:5000/api/items')
+    fetch(`${API_URL}/api/items`)
     .then(res => res.json())
     .then(data => {
       this.setState({items: data}, () => {console.log(this.state.items)})
     })
-    fetch('http://localhost:5000/api/artists')
+    fetch(`${API_URL}/api/artists`)
     .then(res => res.json())
     .then(data => {
       this.setState({artists: data}, () => console.log(this.state.artists))
