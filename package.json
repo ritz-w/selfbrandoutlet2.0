@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nodemon --watch app server.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -24,5 +25,8 @@
     "morgan": "~1.9.0",
     "nodemon": "^1.18.9",
     "validator": "^10.11.0"
-  }
+  },
+  "engines": {
+    "node": "10.13.0"
+}
 }
