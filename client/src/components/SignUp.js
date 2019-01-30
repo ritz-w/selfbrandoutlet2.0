@@ -25,7 +25,7 @@ export default class SignUp extends Component {
     handleSubmit = (e) => {
         this.handleClick()
         e.preventDefault()
-        fetch(`${API_URL}/auth/items`, 
+        fetch(`${API_URL}/auth/register`, 
         {
             headers: {
               'Content-Type': 'application/json'
