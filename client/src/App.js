@@ -15,7 +15,7 @@ class App extends Component {
     }
   }
   componentDidMount(){
-    console.log(API_URL)
+    console.log(process.env.SECRET)
     fetch(`${API_URL}/api/items`)
     .then(res => res.json())
     .then(data => {
