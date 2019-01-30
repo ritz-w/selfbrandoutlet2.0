@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "dotenv": "^6.2.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-responsive-modal": "^3.5.1",
@@ -13,8 +14,8 @@
     "slick-carousel": "^1.8.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-app-env start",
+    "build": "react-app-env build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
@@ -27,5 +28,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "react-app-env": "^1.2.3"
+  }
 }

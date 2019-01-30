@@ -2,9 +2,7 @@ import React, {Component} from 'react'
 import CheckoutModalItem from './CheckoutModalItem'
 import './CheckoutModal.css'
 import PaymentModalForm from './PaymentModalForm'
-const API_URL = (process.env.NODE_ENV === 'development') ? 'http://localhost:3000' : 'https://self-brand-outlet.herokuapp.com/';
-
-
+const API_URL = process.env.REACT_APP_API_LINK
 
 class CheckoutModal extends Component{
     constructor(props) {

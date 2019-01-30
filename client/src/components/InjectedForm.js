@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {CardElement, injectStripe} from 'react-stripe-elements'
-const API_URL = (process.env.NODE_ENV === 'development') ? 'http://localhost:3000' : 'https://self-brand-outlet.herokuapp.com/';
-
+const API_URL = process.env.REACT_APP_API_LINK
 
 class InjectedForm extends Component {
     constructor(props){

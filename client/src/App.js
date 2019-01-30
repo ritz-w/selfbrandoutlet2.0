@@ -3,9 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import {StripeProvider} from 'react-stripe-elements';
 import Page from './containers/Page'
-const API_URL = (process.env.NODE_ENV === 'development') 
-    ? 'http://localhost:3000'
-    : 'https://self-brand-outlet.herokuapp.com/';
+require('dotenv').config()
+const API_URL = process.env.REACT_APP_API_LINK
 
 class App extends Component {
   constructor(props) {
@@ -16,6 +15,8 @@ class App extends Component {
     }
   }
   componentDidMount(){
+    console.log(process.env.REACT_APP_API_URL)
+    console.log(process.env.REACT_APP_API_LINK)
     fetch(`${API_URL}/api/items`)
     .then(res => res.json())
     .then(data => {

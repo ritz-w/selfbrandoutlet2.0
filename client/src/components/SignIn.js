@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './SignIn.css'
-const API_URL = (process.env.NODE_ENV === 'development') ? 'http://localhost:3000' : 'https://self-brand-outlet.herokuapp.com/';
-
+const API_URL = process.env.REACT_APP_API_LINK
 
 export default class SignIn extends Component {
     constructor(props) {
