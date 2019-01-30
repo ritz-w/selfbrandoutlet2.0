@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './SignIn.css'
-const API_URL = (process.env.NODE_ENV === 'development') ? process.env.REACT_APP_DEV_URL : process.env.REACT_APP_PROD_URL;
+const API_URL = (process.env.NODE_ENV === 'development') ? process.env.REACT_APP_DEV_URL : "https://self-brand-outlet.herokuapp.com";
 
 export default class SignUp extends Component {
     constructor(props) {
