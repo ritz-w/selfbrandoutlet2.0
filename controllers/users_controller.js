@@ -34,7 +34,7 @@ exports.sign_in = (req, res) => {
             res.status(401).json({message: 'Authentication failed, User not found.'})
         } else if (user) {
             if (!user.comparePassword(req.body.password)) {
-                res.status(401).json({message: 'Authentication failed, wrong password.'})
+                res.status().json({message: 'Authentication failed, wrong password.'})
             } else {
                 return res.json({token: jwt.sign({email: user.email, fullName: user.fullName, _id: user._id}, 'RESTFULAPIs', {expiresIn: '1d'})});
             }
