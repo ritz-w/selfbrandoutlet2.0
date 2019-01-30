@@ -38,7 +38,7 @@ export default class SignUp extends Component {
             console.log(data)
             if (data.email) {
                 console.log("successfully signed up, now logging in")
-                fetch(`${API_URL}/auth/signin`, 
+                fetch(`${API_URL}/auth/sign_in`, 
                 {
                     headers: {
                     'Content-Type': 'application/json'

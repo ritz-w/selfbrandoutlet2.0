@@ -29,7 +29,7 @@ export default class SignIn extends Component {
             email: this.state.email,
             password: this.state.password
         }
-        fetch(`${API_URL}/auth/signin`, 
+        fetch(`${API_URL}/auth/sign_in`, 
         {
             headers: {
               'Content-Type': 'application/json'
