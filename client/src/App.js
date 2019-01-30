@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import {StripeProvider} from 'react-stripe-elements';
 import Page from './containers/Page'
-const API_URL = (process.env.NODE_ENV === 'development') ? process.env.REACT_APP_DEV_URL : process.env.REACT_APP_PROD_URL;
+const API_URL = (process.env.NODE_ENV === 'development') ? process.env.REACT_APP_DEV_URL : "https://self-brand-outlet.herokuapp.com/";
 
 
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
     }
   }
   componentDidMount(){
-    console.log(process.env.REACT_APP_PROD_URL)
+    console.log(API_URL)
     fetch(`${API_URL}/api/items`)
     .then(res => res.json())
     .then(data => {
