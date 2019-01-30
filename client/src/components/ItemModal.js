@@ -45,7 +45,7 @@ export default class ItemModal extends Component {
         this.props.incrementCart(updatedCart.totalQty)
       })
     } else {
-      this.props.displayError("You must be logged in to shop for items.", true)
+      this.props.displayError("You must be logged in to shop for items. Log in or sign up from the menu on the top right.", true)
     }
   }
 

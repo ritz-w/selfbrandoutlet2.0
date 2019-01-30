@@ -46,7 +46,7 @@ export default class Page extends Component {
     displayError = (errorMessage, isError) => {
         isError ? this.setState({isError: true}) : this.setState({isError: false})
         this.setState({message: errorMessage, messageShown: true})
-        setTimeout(() => {this.setState({messageShown: false})}, 2000)
+        setTimeout(() => {this.setState({messageShown: false})}, 3000)
     }
 
     handleSignOut = () => {

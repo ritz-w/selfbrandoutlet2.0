@@ -61,7 +61,7 @@ export default class Header extends Component {
     }
 
     openCheckout = () => {
-        this.props.loggedIn ? this.props.numInCart > 0 ? this.handleOpen("CheckoutOpen") : this.props.displayError("You have no items in your cart.", true) : this.props.displayError("You must be logged in to access a shopping cart.", true)
+        this.props.loggedIn ? this.props.numInCart > 0 ? this.handleOpen("CheckoutOpen") : this.props.displayError("You have no items in your cart.", true) : this.props.displayError("You must be logged in to access a shopping cart. Log in or sign up from the menu on the top right.", true)
     }
 
     render() {

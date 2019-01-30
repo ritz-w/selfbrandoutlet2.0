@@ -9,9 +9,23 @@ exports.register = (req, res) => {
     newUser.hash_password = bcrypt.hashSync(req.body.password, 10);
     newUser.save(function(err, user) {
         if (err) {
-            return res.status(400).send({
-                message: err
-            })
+            if (err.code === 11000) {
+                return res.status(400).send({
+                    type: "Email exists",
+                    message: "😖❗Another user exists with the same email. Try again with another email address."
+                })}
+            else if (err.name === "ValidationError") {
+                return res.status(400).send({
+                    type: "Email format",
+                    message: "😖❗There is a problem with the formatting of your email address, or one of the fields are missing. Try again."
+                })
+            }
+            else {
+                return res.status(400).send({
+                    message: err
+                })
+            }
+            
         } else {
             console.log(user)
             user.hash_password = undefined;

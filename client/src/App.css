@@ -13,3 +13,18 @@ a {
   color: black;
   text-decoration: none;
 }
+
+.link {
+  color: black;
+  text-decoration: underline;
+  text-decoration-color: violet;
+
+  /* -webkit-text-decoration-style: wavy;
+  text-decoration-style: wavy; */
+}
+
+.link:hover {
+  text-decoration: underline;
+  text-decoration-color: black;
+  transition: text-decoration 1s ease-in-out;
+}

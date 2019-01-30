@@ -40,7 +40,7 @@ export default class Home extends Component {
         const allNames = this.props.items.map(item => item.name)
         return (
             <div className="slider-desc">
-                <Link to={`/artists/${allIds[index]}`}><h4>{allArtists[index]}</h4></Link>
+                <Link to={`/artists/${allIds[index]}`}><h4 className="link">{allArtists[index]}</h4></Link>
                 <h4>{allNames[index]}</h4>
                 <h4>{allYears[index]}</h4>
                 <Modal open={this.state.open} onClose={this.handleClose} key={`modal-item-${allIds[index]}`}>
@@ -88,7 +88,7 @@ export default class Home extends Component {
                     </div>
                     <div>{this.renderDesc(this.state.currentIndex)}</div>
                 </div>
-                <Link to="/items"><div id="see-all-objects-text">See All Objects</div></Link>
+                <Link to="/items"><div className="link" id="see-all-objects-text">See All Objects</div></Link>
                 <div className="home-featured-items">
                     {this.renderFeaturedItems()}
                 </div>
@@ -100,7 +100,7 @@ export default class Home extends Component {
                             {this.state.firstArtist ? (
                                 <Link to={`/artists/${this.state.firstArtist._id}`}>
                                     <div id="featured-artist-caption-1">
-                                        <h3>{this.state.firstArtist.name}</h3>
+                                        <h3 className="link">{this.state.firstArtist.name}</h3>
                                         <p>{this.state.firstArtist.bio}</p>
                                     </div>
                                 </Link>
@@ -108,7 +108,7 @@ export default class Home extends Component {
                             {this.state.secondArtist ? (
                                 <Link to={`/artists/${this.state.secondArtist._id}`}>
                                     <div id="featured-artist-caption-2">
-                                        <h3>{this.state.secondArtist ? this.state.secondArtist.name : null}</h3>
+                                        <h3 className="link">{this.state.secondArtist ? this.state.secondArtist.name : null}</h3>
                                         <p>{this.state.secondArtist ? this.state.secondArtist.bio : null}</p>
                                     </div>
                                 </Link>

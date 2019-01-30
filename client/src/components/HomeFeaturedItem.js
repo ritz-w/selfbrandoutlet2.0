@@ -34,7 +34,7 @@ export default class HomeFeaturedItem extends Component {
                 </Modal>
                 <div className="featured-item-caption">
                     <p>{this.props.item.name}</p>
-                    <Link to={`/artists/${this.props.item.artist._id}`}><p>{this.props.item.artist.name}</p></Link>
+                    <Link to={`/artists/${this.props.item.artist._id}`}><p className="link">{this.props.item.artist.name}</p></Link>
                     <p>${this.props.item.price}</p>
                 </div>
             </div>
