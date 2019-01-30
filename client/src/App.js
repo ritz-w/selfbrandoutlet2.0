@@ -3,8 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import {StripeProvider} from 'react-stripe-elements';
 import Page from './containers/Page'
-require('dotenv').config()
-const API_URL = process.env.REACT_APP_API_LINK
+const API_URL = (process.env.NODE_ENV === 'development') ? process.env.REACT_APP_DEV_URL : process.env.REACT_APP_PROD_URL;
+
 
 class App extends Component {
   constructor(props) {
@@ -15,8 +15,7 @@ class App extends Component {
     }
   }
   componentDidMount(){
-    console.log(process.env.REACT_APP_API_URL)
-    console.log(process.env.REACT_APP_API_LINK)
+    console.log(process.env.REACT_APP_PROD_URL)
     fetch(`${API_URL}/api/items`)
     .then(res => res.json())
     .then(data => {

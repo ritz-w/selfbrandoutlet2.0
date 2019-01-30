@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Elements, CardElement} from 'react-stripe-elements';
+import {Elements} from 'react-stripe-elements';
 import InjectedForm from './InjectedForm'
 
 // import './PaymentModalForm.css'
@@ -23,7 +23,7 @@ export default class PaymentModalForm extends Component {
             <div>
                 <div className="checkout-header">
                     <h1>Your Payment</h1>                        
-                    <h3>Your total is ${this.props.totalPrice}. Since this is a demo, you should not add your real credit card details. To try out the payment functionality, Please enter these payment details below, or return to <a href="#" onClick={this.props.backToCart}>your cart</a>.</h3>                        
+                    <h3>Your total is ${this.props.totalPrice}. Since this is a demo, you should not add your real credit card details. To try out the payment functionality, Please enter these payment details below, or return to <p onClick={this.props.backToCart}>your cart</p>.</h3>                        
                     <h4>Visa: 4242 4242 4242 4242</h4> 
                     <h4>Mastercard: 5555 5555 5555 4444</h4> 
                     <h3>For CVC, enter set of numbers. For expiration, enter any random date in the future.</h3> 
